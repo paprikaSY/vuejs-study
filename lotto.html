@@ -66,17 +66,26 @@
 		let num = document.getElementsByTagName("li");
 		let count = 0;
 		let LIMIT = 6;
+		let arr = [];
 		
 		for(let i in num) {
 			let curNum = num[i];
+			let temp = Number(i) + 1;
+
 			curNum.onclick = function() {
 				if(curNum.className.match('selected')) {
-					this.setAttribute('class', '')
-					count--
+					this.setAttribute('class', '');
+					count--;
+					let searchArr = arr.indexOf('temp');
+
+					if(searchArr == -1) {
+						arr.splice(searchArr, 1);
+					}
 				} else {
 					if(count < LIMIT) {
-						this.setAttribute('class', 'selected')
-						count++
+						this.setAttribute('class', 'selected');
+						count++;
+						arr.push(temp);
 					} else {
 						alert('6개까지 선택 가능합니다.')
 					}
