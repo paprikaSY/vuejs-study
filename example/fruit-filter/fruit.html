@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>FRUIT FILTER</title>
+	<style type="text/css">
+		html,body,* { margin: 0; padding: 0; text-align: center;}
+		h1 { margin-top: 30px; }
+		/* ul { list-style: none; width: 200px; margin: 30px auto;}
+		li { display: inline-block; cursor: pointer; width: 30px; height: 30px; border-radius: 100%; background-color: #eeeeee; line-height: 30px; margin: 2px;}
+		li.selected { background-color: #6550ac; } */
+		input { display:block; width: 200px; height: 30px; margin: 0 auto; background-color: #6550ac; border: none; border-radius: 3px; color: #ffffff}
+	</style>
+</head>
+<body>
+	<div class="wrapper">
+		<label for=""></label>
+		<input type="text" name="filter">
+		<ul>
+			<li v-for="fruit in fruits" v-if="fruit"></li>
+		</ul>
+	</div>
+</body>
+<script type="text/javascript">
+
+const fruits = ['사과','감','단감','곶감','귤','오랜지','배','복숭아','살구','자두','포도','건포도','청포도',
+'모과','석류','바나나','무화과','람부탄','두리안','망고','체리','앵두','파인애플','키위','골드키위',
+'리치','율무','레몬','자두','밤','모과','오디','버찌','라임','딸기','수박','토마토',
+'멜론','참외','코코넛','파파야','탑팀','치코','블리빙','탱자','매실',];
+
+const vue = new Vue({
+	el: ".wrapper",
+	data: {
+		fruits: fruits
+	}
+});
+
+</script>
+
+
+</html>
